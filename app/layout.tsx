@@ -32,24 +32,27 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <header className="w-full bg-white">
           <nav className="flex justify-between px-6 py-4">
-            <div className="relative">
-              {/* Desktop logo */}
-              <Image
-                src="/printforge-logo.svg"
-                alt="PrintForge Logo"
-                width={200}
-                height={40}
-                className="hidden md:block"
-              />
-              {/* Mobile logo */}
-              <Image
-                src="/printforge-logo-icon.svg"
-                alt="PrintForge Logo"
-                width={40}
-                height={40}
-                className="block md:hidden"
-              />
-            </div>
+            <Link href="/">
+              <div className="relative">
+                {/* Desktop logo */}
+                <Image
+                  src="/printforge-logo.svg"
+                  alt="PrintForge Logo"
+                  width={200}
+                  height={40}
+                  className="hidden md:block"
+                />
+                {/* Mobile logo */}
+                <Image
+                  src="/printforge-logo-icon.svg"
+                  alt="PrintForge Logo"
+                  width={40}
+                  height={40}
+                  className="block md:hidden"
+                />
+              </div>
+            </Link>
+
             <ul className="flex items-center gap-2.5">
               <li>
                 <Link href="/3d-models">3D Models</Link>
