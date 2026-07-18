@@ -1,23 +1,8 @@
 import type { Metadata } from "next";
-import {
-  Geist,
-  Geist_Mono,
-  Albert_Sans,
-  Montserrat_Alternates,
-} from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { Albert_Sans, Montserrat_Alternates } from "next/font/google";
 
 const albertSans = Albert_Sans({
   subsets: ["latin"],
@@ -42,16 +27,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className={`min-h-full flex flex-col ${albertSans.className}`}>
+    <html lang="en">
+      <body
+        className={`${albertSans.className} ${montserratAlternates.variable} min-h-full flex flex-col`}
+      >
         <header className="w-full bg-white">
           <nav className="flex justify-between px-6 py-4">
             <Link href="/">
               <div className="relative">
-                {/* Desktop logo */}
                 <Image
                   src="/printforge-logo.svg"
                   alt="PrintForge Logo"
@@ -59,7 +42,6 @@ export default function RootLayout({
                   height={40}
                   className="hidden md:block"
                 />
-                {/* Mobile logo */}
                 <Image
                   src="/printforge-logo-icon.svg"
                   alt="PrintForge Logo"
@@ -69,7 +51,6 @@ export default function RootLayout({
                 />
               </div>
             </Link>
-
             <ul className="flex items-center gap-2.5">
               <li>
                 <Link href="/3d-models">3D Models</Link>
