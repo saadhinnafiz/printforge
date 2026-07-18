@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Albert_Sans,
+  Montserrat_Alternates,
+} from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,6 +17,18 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const albertSans = Albert_Sans({
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const montserratAlternates = Montserrat_Alternates({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-montserrat-alternates",
 });
 
 export const metadata: Metadata = {
@@ -29,7 +46,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className={`min-h-full flex flex-col ${albertSans.className}`}>
         <header className="w-full bg-white">
           <nav className="flex justify-between px-6 py-4">
             <Link href="/">
