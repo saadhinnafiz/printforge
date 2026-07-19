@@ -54,3 +54,7 @@ export type CategoryPageProps = {
     categoryName: string;
   }>;
 };
+
+export type GetModelsParams = {
+  category?: string;
+};
