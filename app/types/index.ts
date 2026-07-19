@@ -48,3 +48,9 @@ export type NavLinkProps = {
   children: ReactNode;
   isActive?: boolean;
 };
+
+export type CategoryPageProps = {
+  params: Promise<{
+    categoryName: string;
+  }>;
+};
