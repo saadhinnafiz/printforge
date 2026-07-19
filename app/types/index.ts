@@ -58,3 +58,7 @@ export type CategoryPageProps = {
 export type GetModelsParams = {
   category?: string;
 };
+
+export type ModelsPageProps = {
+  searchParams: Promise<{ search?: string }>;
+};
