@@ -1,6 +1,15 @@
 @import "tailwindcss";
 
-@import "tailwindcss";
+@theme {
+  --color-orange-accent: #f77d36;
+}
+
+@utility scrollbar-hide {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
 
 h1,
 h2,
